@@ -23,12 +23,12 @@ Every developer needs api testing suite — but existing tools are either too co
 
 ## Features
 
-- **REST, GraphQL, gRPC support** — REST, GraphQL, gRPC support
-- **Automated test generation** — Automated test generation
-- **Load testing** — Load testing
-- **Contract testing** — Contract testing
-- **CI/CD integration** — CI/CD integration
-- **Report generation** — Report generation
+- REST, GraphQL, gRPC support
+- Automated test generation
+- Load testing
+- Contract testing
+- CI/CD integration
+- Report generation
 
 ## Quick Start
 
