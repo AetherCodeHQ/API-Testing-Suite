@@ -6,7 +6,7 @@ Thank you for your interest in contributing! 🎉
 
 ### 1. Fork the Repository
 ```bash
-git clone https://github.com/Qyroxen/API-Testing-Suite.git
+git clone https://github.com/AetherCodeHQ/API-Testing-Suite.git
 cd API-Testing-Suite
 ```
 
