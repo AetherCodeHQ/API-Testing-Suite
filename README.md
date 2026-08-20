@@ -1,153 +1,92 @@
 # API Testing Suite
 
-Comprehensive API testing toolkit for REST, GraphQL, and gRPC APIs.
+![CI](https://github.com/Qyroxen/API-Testing-Suite/actions/workflows/ci.yml/badge.svg) ![Go](https://img.shields.io/badge/Go-1.23+-00ADD8?style=flat&logo=go) ![License](https://img.shields.io/badge/License-MIT-yellow.svg) ![Stars](https://img.shields.io/github/stars/Qyroxen/API-Testing-Suite?style=social)
 
-[![Go Version](https://img.shields.io/badge/Go-1.23%2B-00ADD8?style=flat&logo=go)](https://go.dev/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-[![CI](https://github.com/Qyroxen/api-testing-suite/actions/workflows/ci.yml/badge.svg)](https://github.com/Qyroxen/api-testing-suite/actions/workflows/ci.yml)
+> Complete API testing toolkit - automated testing, load testing, and monitoring
 
-> Comprehensive API testing toolkit for REST, GraphQL, and gRPC APIs.
+[![Star Badge](https://img.shields.io/github/stars/Qyroxen/API-Testing-Suite?style=social)](https://github.com/Qyroxen/API-Testing-Suite/stargazers)
 
 ## What is it?
 
-API Testing Suite is a command-line tool built with Go that helps developers comprehensive api testing toolkit for rest, graphql, and grpc apis. It's designed to be fast, reliable, and easy to use.
+API Testing Suite provides comprehensive API testing including functional tests, load tests, and continuous monitoring.
 
-## Why?
+## Why should you care?
 
-Every developer needs api testing suite — but existing tools are either too complex, too slow, or require cloud dependencies. We built API Testing Suite to be:
-- **Fast** — Written in Go for maximum performance
-- **Offline** — No cloud dependencies, your data stays on your machine
-- **Simple** — Clean CLI interface with sensible defaults
-- **Extensible** — Easy to customize and integrate into your workflow
+APIs are the backbone of modern apps. This tool ensures they work correctly under any conditions.
+
+## Demo
+
+```bash
+./api-test run --url https://api.example.com/users
+```
+
+**Output:**
+```
+API Test Results:
+  - 45/45 tests passed
+  - Average response time: 120ms
+  - Load test: 1000 req/sec sustained
+```
 
 ## Features
 
-- REST, GraphQL, gRPC support
-- Automated test generation
+- Functional testing
 - Load testing
 - Contract testing
-- CI/CD integration
+- Continuous monitoring
 - Report generation
 
 ## Quick Start
 
-### Prerequisites
-
-- Go 1.23 or later
-
-### Install
-
 ```bash
-# Install with go install
-go install github.com/Qyroxen/api-testing-suite@latest
+# Install
+git clone https://github.com/Qyroxen/API-Testing-Suite.git
+cd API-Testing-Suite
+go build -o api-test .
 
-# Or build from source
-git clone https://github.com/Qyroxen/api-testing-suite.git
-cd api-testing-suite
-go build -o api-testing-suite .
-```
-
-### Usage
-
-```bash
-# Basic usage
-.api-testing-suite --help
-
-# Example
-./api-testing-suite test --url http://localhost:8080/api
-```
-
-## Output
-
-```
-API Testing Suite v1.0.0
-
-Scanning...
-
-✓ Analysis complete
-✓ Results ready
-
-{
-  "status": "success",
-  "results": [...]
-}
-```
-
-## Configuration
-
-Create a `.config.yaml` file in your project root:
-
-```yaml
-# Configuration options
-verbose: true
-output: json
-timeout: 30s
+# Run
+./api-test --url https://api.example.com
 ```
 
 ## CLI Flags
 
-```
-api testing suite [command]
-
-Flags:
-  --path string      Target path (default ".")
-  --format string    Output format: json, text (default "text")
-  --verbose          Enable verbose output
-  --config string    Config file path
-  --output string    Output file path
-```
+| Flag | Description | Default |
+|------|-------------|---------|
+| `--url` | API endpoint | (required) |
+| `--method` | HTTP method | `GET` |
+| `--load` | Enable load testing | `false` |
+| `--concurrent` | Concurrent connections | `10` |
+| `--duration` | Load test duration | `60s` |
 
 ## Examples
 
-### Basic Example
+# Functional test
+./api-test run --url https://api.example.com/users
 
-```bash
-.api-testing-suite --path ./src
-```
+# Load test
+./api-test run --url https://api.example.com/users --load --concurrent 100
 
-### Advanced Example
-
-```bash
-.api-testing-suite --path ./src --format json --output report.json --verbose
-```
-
-### CI/CD Integration
-
-```yaml
-# .github/workflows/ci.yml
-- name: Run API Testing Suite
-  run: |
-    go install github.com/Qyroxen/api-testing-suite@latest
-    api-testing-suite --path . --format json --output report.json
-```
-
-## Documentation
-
-- [Getting Started](docs/getting-started.md)
-- [Configuration](docs/configuration.md)
-- [API Reference](docs/api-reference.md)
-- [Examples](examples/)
-- [Contributing](CONTRIBUTING.md)
+# Contract test
+./api-test contract --spec ./openapi.yaml
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Author
-
-**Qyroxen** - [GitHub](https://github.com/Qyroxen)
-
 ---
 
-**Found this useful?** Give it a ⭐ on GitHub!
+<p align="center">
+  <a href="https://github.com/Qyroxen/API-Testing-Suite/stargazers">
+    <img src="https://img.shields.io/github/stars/Qyroxen/API-Testing-Suite?style=social" alt="Star this repo">
+  </a>
+  <a href="https://github.com/Qyroxen/API-Testing-Suite/network/members">
+    <img src="https://img.shields.io/github/forks/Qyroxen/API-Testing-Suite?style=social" alt="Fork this repo">
+  </a>
+  <a href="https://github.com/Qyroxen/API-Testing-Suite/issues">
+    <img src="https://img.shields.io/github/issues/Qyroxen/API-Testing-Suite" alt="Issues">
+  </a>
+</p>
