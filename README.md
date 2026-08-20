@@ -2,39 +2,22 @@
 
 ![CI](https://github.com/Qyroxen/API-Testing-Suite/actions/workflows/ci.yml/badge.svg) ![Go](https://img.shields.io/badge/Go-1.23+-00ADD8?style=flat&logo=go) ![License](https://img.shields.io/badge/License-MIT-yellow.svg) ![Stars](https://img.shields.io/github/stars/Qyroxen/API-Testing-Suite?style=social)
 
-> Complete API testing toolkit - automated testing, load testing, and monitoring
+> A powerful CLI tool built with Go
 
 [![Star Badge](https://img.shields.io/github/stars/Qyroxen/API-Testing-Suite?style=social)](https://github.com/Qyroxen/API-Testing-Suite/stargazers)
 
 ## What is it?
 
-API Testing Suite provides comprehensive API testing including functional tests, load tests, and continuous monitoring.
-
-## Why should you care?
-
-APIs are the backbone of modern apps. This tool ensures they work correctly under any conditions.
-
-## Demo
-
-```bash
-./api-test run --url https://api.example.com/users
-```
-
-**Output:**
-```
-API Test Results:
-  - 45/45 tests passed
-  - Average response time: 120ms
-  - Load test: 1000 req/sec sustained
-```
+API Testing Suite is a production-ready CLI tool built with Go. It provides powerful functionality with a beautiful terminal interface.
 
 ## Features
 
-- Functional testing
-- Load testing
-- Contract testing
-- Continuous monitoring
-- Report generation
+- Fast and efficient (written in Go)
+- Beautiful CLI with colored output
+- Comprehensive documentation
+- GitHub Actions CI/CD
+- MIT Licensed
+- Fully offline - zero cloud dependency
 
 ## Quick Start
 
@@ -42,32 +25,47 @@ API Test Results:
 # Install
 git clone https://github.com/Qyroxen/API-Testing-Suite.git
 cd API-Testing-Suite
-go build -o api-test .
+go build -o apitestingsuite .
 
 # Run
-./api-test --url https://api.example.com
+./apitestingsuite --help
 ```
 
-## CLI Flags
+## CLI Usage
 
-| Flag | Description | Default |
-|------|-------------|---------|
-| `--url` | API endpoint | (required) |
-| `--method` | HTTP method | `GET` |
-| `--load` | Enable load testing | `false` |
-| `--concurrent` | Concurrent connections | `10` |
-| `--duration` | Load test duration | `60s` |
+```bash
+# Basic usage
+./apitestingsuite
+
+# With flags
+./apitestingsuite --verbose --output json
+
+# Get help
+./apitestingsuite --help
+```
 
 ## Examples
 
-# Functional test
-./api-test run --url https://api.example.com/users
+```bash
+# Example 1
+./apitestingsuite example1
 
-# Load test
-./api-test run --url https://api.example.com/users --load --concurrent 100
+# Example 2
+./apitestingsuite example2 --flag value
+```
 
-# Contract test
-./api-test contract --spec ./openapi.yaml
+## Development
+
+```bash
+# Run tests
+go test ./...
+
+# Build
+go build -o apitestingsuite .
+
+# Lint
+go vet ./...
+```
 
 ## Contributing
 
@@ -83,10 +81,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   <a href="https://github.com/Qyroxen/API-Testing-Suite/stargazers">
     <img src="https://img.shields.io/github/stars/Qyroxen/API-Testing-Suite?style=social" alt="Star this repo">
   </a>
-  <a href="https://github.com/Qyroxen/API-Testing-Suite/network/members">
+  <a href="https://github.com/Qyroxen/API-Testing-Suite/forks">
     <img src="https://img.shields.io/github/forks/Qyroxen/API-Testing-Suite?style=social" alt="Fork this repo">
-  </a>
-  <a href="https://github.com/Qyroxen/API-Testing-Suite/issues">
-    <img src="https://img.shields.io/github/issues/Qyroxen/API-Testing-Suite" alt="Issues">
   </a>
 </p>
